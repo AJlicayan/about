@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <!-- Link to Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F5F5F5;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .about-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .about-header-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .about-logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+            .about-logo-section img {
+                width: 80px; 
+                margin-right: 20px;
+            }
+
+            .about-logo-section .info p {
+                margin: 0;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #343434;
+            }
+
+            .about-logo-section .info a {
+                color: #DA813A; 
+                text-decoration: none;
+            }
+
+        .about-socials-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .socials {
+            display: flex;
+            gap: 15px;
+            margin-right: 15px;
+        }
+
+            .socials a {
+                display: block;
+                position: relative;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 25px;
+                text-align: center;
+                text-decoration: none;
+                color: #404040;
+                transition: 0.5s;
+            }
+
+            .socials a span {
+                position: absolute;
+                transition: transform 0.5s;
+            }
+
+            .socials a span:nth-child(1),
+            .socials a span:nth-child(3) {
+                width: 100%;
+                height: 1px;
+                background: #404040;
+            }
+
+            .socials a span:nth-child(1) {
+                top: 0;
+                left: 0;
+                transform-origin: right;
+            }
+
+            .socials a:hover span:nth-child(1) {
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+
+            .socials a span:nth-child(3) {
+                bottom: 0;
+                left: 0;
+                transform-origin: left;
+            }
+
+            .socials a:hover span:nth-child(3) {
+                transform: scaleX(0);
+                transform-origin: right;
+            }
+
+            .socials a span:nth-child(2),
+            .socials a span:nth-child(4) {
+                width: 3px;
+                height: 100%;
+                background: #404040;
+            }
+
+            .socials a span:nth-child(2) {
+                top: 0;
+                left: 0;
+                transform: scale(0);
+                transform-origin: bottom;
+            }
+
+            .socials a:hover span:nth-child(2) {
+                transform: scale(1);
+                transform-origin: top;
+            }
+
+            .socials a span:nth-child(4) {
+                top: 0;
+                right: 0;
+                transform: scale(0);
+                transform-origin: top;
+            }
+
+            .socials a:hover span:nth-child(4) {
+                transform: scale(1);
+                transform-origin: bottom;
+            }
+
+            .facebook:hover {
+                color: #3b5998;
+            }
+            .facebook:hover span {
+                background: #3b5998;
+            }
+
+            .twitter:hover {
+                color: #1da1f2;
+            }
+            .twitter:hover span {
+                background: #1da1f2;
+            }
+
+            .instagram:hover {
+                color: #c32aa3;
+            }
+            .instagram:hover span {
+                background: #c32aa3;
+            }
+
+            .youtube:hover {
+                color: #ff0000;
+            }
+            .youtube:hover span {
+                background: #ff0000;
+            }
+
+        .about-header {
+            text-align: right;
+        }
+
+            .about-header h2 {
+                font-size: 2.8rem;
+                font-weight: bold;
+                margin-bottom: 30px;
+                color: #343434;
+                text-align: left;
+            }
+
+        .about-image img {
+            border-radius: 13px;
+            width: 100%;
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 30px;
+        }
+
+        .about-text {
+            text-align: justify;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 30px; 
+            padding-bottom: 40px; 
+            border-bottom: 2px solid #ccc; 
+        }
+        .about-text2 {
+            text-align: justify;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .container {
+      width: 100%;
+      max-width: 1280px;
+      min-width: 1000px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 auto;
+      gap: 30px; 
+    }
+
+    .card {
+      height: 250px;
+      width: 300px;
+      background: #ffff center/300px no-repeat;
+      border-radius: 10px;
+      display: flex;
+      position: relative;
+      transition: background 0.8s, background-position 0.8s;
+    }
+
+    .card:hover {
+      background-position: left;
+      background-size: 600px;
+    }
+
+    .card:hover h3, .card:hover .icons {
+      opacity: 1;
+    }
+
+    h3 {
+      color: #252525;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 20px;
+      margin: 10px;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    .icons {
+      position: absolute;
+      margin: 10px;
+      top: 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    .icons a {
+      color: #252525;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .icons i { font-size: 24px; }
+
+    .icons a:hover i { color: #DA813A; }
+
+    </style>
+</head>
+<body>
+
+    <div class="about-container">
+        <div class="about-header">
+            <h2>About Tastora.com</h2>
+        </div>
+
+        <div class="about-header-section">
+            <div class="about-logo-section">
+                <h2>Tastora.</h2>
+                <div class="info">
+                    <h2>by <a href="#" id="scrollToTeam">Group 1</a></h2>
+                </div>
+            </div>
+            <div class="about-socials-header">
+                <div class="socials">
+                    <a class="facebook" href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <i class="bi bi-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a class="twitter" href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <i class="bi bi-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a class="instagram" href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a class="youtube" href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <i class="bi bi-youtube" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-image">
+            <img src="img/f16.jpg" alt="Tastora">
+        </div>
+
+        <div class="about-text">
+            <p>
+                Tastora is more than just a food blog, it's a community where culinary enthusiasts come together to celebrate the art of cooking. From traditional recipes to modern twists on classic dishes, Tastora aims to inspire everyone to discover new flavors and create memorable dining experiences. Our platform connects people who share a passion for food, whether you're a seasoned chef or a kitchen novice.
+            </p>
+            <p>
+                Join the Tastora community and explore a world of flavors that bring people closer, one dish at a time. We believe in the power of good food to create unforgettable moments and to foster connections that transcend cultures and borders.
+            </p>
+        </div>
+
+        <div class="about-header">
+            <h2 id="teamSection">About our Team</h2>
+        </div>
+
+        <div class="about-text2">
+            <p>
+                We are a group of BS Information Technology students from Quezon City University (QCU), driven by a shared passion for innovation and problem solving. With diverse skills in software development, design, and project management, we aim to create impactful solutions that bridge technology and real-world needs. Our collaborative spirit and commitment to excellence fuel our journey as future IT professionals, ready to make meaningful contributions to the tech industry.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card" style="background-image: url('img/AdrianJake.png');">
+          <div>
+            <h3>Adrian Jake</h3>
+            <div class="icons">
+              <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" aria-label="Email"><i class="fa fa-envelope"></i></a>
+              <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="background-image: url('/img/ANNERXON.jpg');">
+          <div>
+            <h3>Annerxon</h3>
+            <div class="icons">
+              <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" aria-label="Email"><i class="fa fa-envelope"></i></a>
+              <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="background-image: url('/img/MARK\ LAURENCE.jpg');">
+          <div>
+            <h3>Mark Laurence</h3>
+            <div class="icons">
+              <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" aria-label="Email"><i class="fa fa-envelope"></i></a>
+              <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="background-image: url('img/KURT\ LEE.jpg');">
+          <div>
+            <h3>Kurt Lee</h3>
+            <div class="icons">
+              <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" aria-label="Email"><i class="fa fa-envelope"></i></a>
+              <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="background-image: url('img/JOHN\ JOSHUA.jpg');">
+          <div>
+            <h3>John Joshua</h3>
+            <div class="icons">
+              <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" aria-label="Email"><i class="fa fa-envelope"></i></a>
+              <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="background-image: url('img/MARK\ LUIS.jpg');">
+          <div>
+            <h3>Mark Luis</h3>
+            <div class="icons">
+              <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" aria-label="Email"><i class="fa fa-envelope"></i></a>
+              <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="background-image: url('img/placeholder.jpg');">
+          <div>
+            <h3>Gino</h3>
+            <div class="icons">
+              <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" aria-label="Email"><i class="fa fa-envelope"></i></a>
+              <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <script>
+        document.getElementById('scrollToTeam').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            document.getElementById('teamSection').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+</html>
